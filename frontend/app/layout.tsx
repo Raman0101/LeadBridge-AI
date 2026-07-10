@@ -72,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <span className="text-red-500 inline-block animate-bounce-gentle">❤</span>
                 {' '}by{' '}
                 <span className="font-semibold gradient-text">
-                  Raman Kumar Bhagat
+                  Raman
                 </span>
                 {' '}— passionate about building great software.
               </p>
