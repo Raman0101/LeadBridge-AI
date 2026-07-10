@@ -41,10 +41,10 @@ export default function UploadZone({ onFile, disabled }: Props) {
         'relative group cursor-pointer overflow-hidden',
         'border-2 border-dashed rounded-2xl p-12 text-center transition-all duration-300',
         drag
-          ? 'border-slate-400 dark:border-slate-500 bg-slate-100/80 dark:bg-slate-800/50 scale-[1.02]'
+          ? 'border-slate-400 dark:border-slate-500 bg-slate-100/80 dark:bg-transparent scale-[1.02]'
           : file
-            ? 'border-slate-300 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-900/30'
-            : 'border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 hover:bg-slate-50/50 dark:hover:bg-slate-900/30',
+            ? 'border-slate-300 dark:border-slate-600 bg-slate-50/50 dark:bg-transparent'
+            : 'border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 hover:bg-slate-50/50 dark:hover:bg-transparent',
         disabled && 'opacity-50 cursor-not-allowed'
       )}
       onClick={() => !disabled && document.getElementById('csv-input')?.click()}
@@ -89,8 +89,8 @@ export default function UploadZone({ onFile, disabled }: Props) {
           <div className={cn(
             'inline-flex items-center justify-center w-20 h-20 rounded-3xl transition-all duration-500',
             drag
-              ? 'bg-slate-200 dark:bg-slate-700 scale-110'
-              : 'bg-slate-100 dark:bg-slate-800 group-hover:bg-slate-200 dark:group-hover:bg-slate-700/50'
+              ? 'bg-slate-200 dark:bg-white/10 scale-110'
+              : 'bg-slate-100 dark:bg-white/5 group-hover:bg-slate-200 dark:group-hover:bg-white/10'
           )}>
             <UploadCloud
               className={cn(

@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import ThemeToggle from './components/ThemeToggle';
+import MouseGradient from './components/MouseGradient';
 import { Github } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -23,6 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-slate-700/10 dark:bg-slate-300/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
         </div>
 
+        {/* Mouse-following gradient overlay */}
+        <MouseGradient />
+
         {/* Header with glass morphism */}
         <header className="sticky top-0 z-50 glass border-b border-slate-200/50 dark:border-slate-800/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://github.com/Raman0101/groweasy-csv-importer"
+                  href="https://github.com/Raman0101/LeadBridge-AI"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium 
