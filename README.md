@@ -36,7 +36,7 @@ AI-powered CSV importer that intelligently maps any CSV format (Facebook Lead Ad
 
 ---
 
-## 📦 Local Setup
+<!-- ## 📦 Local Setup
 
 ### 1. Clone & configure
 
@@ -169,7 +169,7 @@ GEMINI_API_KEY=your_api_key
 FRONTEND_URL=https://your-frontend-url.com
 ```
 
----
+--- -->
 
 ## 📝 License
 
