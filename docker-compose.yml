@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  backend:
+    build: ./backend
+    ports: ['4000:4000']
+    environment:
+      - PORT=4000
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-2.5-flash}
+      - BATCH_SIZE=25
+      - FRONTEND_URL=http://localhost:3000
+    restart: unless-stopped
+
+  frontend:ckend
+  
+    build: ./frontend
+    ports: ['3000:3000']
+    environment:
+      - NEXT_PUBLIC_API_BASE=http://localhost:4000/api
+    depends_on: [backend]
+    restart: unless-stopped

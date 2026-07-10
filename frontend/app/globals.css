@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root { color-scheme: light dark; }
+html, body { height: 100%; }
+
+
+body {
+  @apply bg-gradient-to-br from-white via-slate-50 to-slate-100 text-slate-900 
+         dark:from-black dark:via-slate-950 dark:to-slate-900 dark:text-slate-100 
+         font-sans antialiased;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb { @apply bg-slate-300 dark:bg-slate-700 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-slate-400 dark:bg-slate-600; }
+
+/* Sticky-header virtualized table */
+.table-wrap { 
+  @apply rounded-2xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden 
+         bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm shadow-lg shadow-slate-200/50 
+         dark:shadow-black/20; 
+}
+.table-scroll { @apply overflow-auto; max-height: 70vh; }
+th { @apply sticky top-0 z-10 bg-slate-100/90 dark:bg-slate-900/90 backdrop-blur-sm; }
+
+/* Glass morphism utility */
+.glass {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/20 dark:border-slate-800/50;
+}
+
+.glass-card {
+  @apply glass rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-black/20;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-600 
+         dark:from-white dark:to-slate-300;
+}
+
+/* Shimmer loading effect */
+.shimmer-bg {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(100, 100, 100, 0.08) 50%, 
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Button base styles */
+.btn-primary {
+  @apply relative px-6 py-2.5 rounded-xl font-medium text-white 
+         bg-gradient-to-r from-slate-800 to-slate-700 
+         dark:from-white dark:to-slate-200 dark:text-slate-900
+         hover:from-slate-700 hover:to-slate-600 
+         dark:hover:from-slate-100 dark:hover:to-white
+         active:scale-[0.98] transition-all duration-200 
+         shadow-lg shadow-slate-900/25 dark:shadow-white/20 
+         disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100;
+}
+
+.btn-secondary {
+  @apply relative px-6 py-2.5 rounded-xl font-medium 
+         border border-slate-300 dark:border-slate-700 
+         bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm
+         hover:bg-slate-100 dark:hover:bg-slate-700/80 
+         active:scale-[0.98] transition-all duration-200
+         shadow-sm hover:shadow-md;
+}
+
+/* Tab button styles */
+.tab-active {
+  @apply bg-gradient-to-r from-slate-800 to-slate-700 
+         dark:from-white dark:to-slate-200 
+         text-white dark:text-slate-900 
+         shadow-lg shadow-slate-900/25 dark:shadow-white/20;
+}
+
+.tab-inactive {
+  @apply border border-slate-300 dark:border-slate-700 
+         bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm
+         hover:bg-slate-100 dark:hover:bg-slate-700/80
+         text-slate-700 dark:text-slate-300;
+}
+
+/* Status badges */
+.status-badge {
+  @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold 
+         shadow-sm backdrop-blur-sm;
+}
+
+.status-good {
+  @apply bg-slate-100/80 text-slate-700 dark:bg-slate-800/80 dark:text-slate-300 
+         border border-slate-200/50 dark:border-slate-700/50;
+}
+
+.status-did-not-connect {
+  @apply bg-amber-100/80 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300 
+         border border-amber-200/50 dark:border-amber-800/50;
+}
+
+.status-bad {
+  @apply bg-red-100/80 text-red-700 dark:bg-red-900/40 dark:text-red-300 
+         border border-red-200/50 dark:border-red-800/50;
+}
+
+.status-sale {
+  @apply bg-slate-100/80 text-slate-700 dark:bg-slate-800/80 dark:text-slate-300 
+         border border-slate-200/50 dark:border-slate-700/50;
+}
+
+/* Error banner */
+.error-banner {
+  @apply p-4 rounded-2xl bg-gradient-to-r from-red-50 to-red-100/80 
+         dark:from-red-950/40 dark:to-red-900/20 
+         text-red-700 dark:text-red-300 
+         border border-red-200/80 dark:border-red-900/50 
+         backdrop-blur-sm shadow-lg shadow-red-500/10;
+}
